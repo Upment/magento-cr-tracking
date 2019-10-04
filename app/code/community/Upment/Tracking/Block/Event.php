@@ -52,10 +52,10 @@ class Upment_Tracking_Block_Event extends Mage_Core_Block_Template
       if (0 === strpos($fullActionName, 'catalogsearch_')) {
         $thispage='searchresults';
       }
-      if ( ('checkout_onepage_index' == $fullActionName) || ('aw_onestepcheckout_index_index' == $fullActionName) || ('checkout_cart_index' == $fullActionName) ) {
+      if ( ('checkout_onepage_index' == $fullActionName) || ('aw_onestepcheckout_index_index' == $fullActionName) || ('checkout_prime_index' == $fullActionName) || ('checkout_klarna_index' == $fullActionName) ) {
         $thispage='checkout';
       }
-      if ('checkout_onepage_success' == $fullActionName) {
+      if ( ('checkout_onepage_success' == $fullActionName) || ('checkout_prime_success' == $fullActionName) || ('checkout_klarna_success' == $fullActionName) ) {
         $thispage='success';
       }
       return $thispage;
