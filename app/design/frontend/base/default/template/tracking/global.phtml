@@ -1,0 +1,24 @@
+<?php
+/**
+ * Upment Tracking
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2019 Upment DOO (https://upment.com)
+ */
+?>
+<?php
+$_helper = $this->helper('tracking');
+$_accountId = $_helper->getAccountId();
+$_allowedDomain = $_helper->getAllowedDomain();
+if ( ($_allowedDomain == '') || (Mage::getBaseUrl() == 'http://' . $_allowedDomain . '/') || (Mage::getBaseUrl() == 'https://' . $_allowedDomain . '/') ):
+?>
+<!-- Global site tag (gtag.js) - Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $_accountId; ?>"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '<?php echo $_accountId; ?>');
+</script>
+<?php endif; ?>

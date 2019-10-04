@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Upment Tracking
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2019 Upment DOO (https://upment.com)
+ */
+
+-->
+<layout version="0.1.0">
+    <default>
+        <!-- Upment_Tracking -->
+        <reference name="before_body_end">
+            <block type="tracking/global" name="tracking_global" as="tracking_global" template="tracking/global.phtml" />
+            <block type="tracking/event" name="tracking_event" as="tracking_event" template="tracking/event.phtml" />
+        </reference>
+    </default>
+</layout>
